@@ -2,8 +2,8 @@
   "name": "@projeto-react-08/tsconfig",
   "version": "0.0.0",
   "private": true,
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public"
-  }
+  "files": [
+    "library.json"
+  ],
+  "license": "MIT"
 }

@@ -1,0 +1,6 @@
+{
+  "extends": "@projeto-react-08/tsconfig/library.json",
+  "include": [
+    "src/**/*"
+  ]
+}
