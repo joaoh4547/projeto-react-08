@@ -1,0 +1,23 @@
+{
+  "name": "@projeto-react-08/api",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@projeto-react-08/auth": "workspace:*"
+  },
+  "devDependencies": {
+    "@projeto-react-08/eslint-config": "workspace:*",
+    "@projeto-react-08/prettier": "workspace:*",
+    "@projeto-react-08/tsconfig": "workspace:*",
+    "@types/node": "^22.13.9",
+    "tsx": "^4.19.3"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@projeto-react-08/eslint-config/node"
+    ]
+  },
+  "prettier": "@projeto-react-08/prettier"
+}

@@ -5,8 +5,8 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "devDependencies": {
-    "@projeto-react-08/prettier": "workspace:*",
     "@projeto-react-08/eslint-config": "workspace:*",
+    "@projeto-react-08/prettier": "workspace:*",
     "@projeto-react-08/tsconfig": "workspace:*"
   },
   "eslintConfig": {
@@ -14,5 +14,8 @@
       "@projeto-react-08/eslint-config/library"
     ]
   },
-  "prettier": "@projeto-react-08/prettier"
+  "prettier": "@projeto-react-08/prettier",
+  "dependencies": {
+    "@casl/ability": "^6.7.3"
+  }
 }
