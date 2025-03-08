@@ -2,5 +2,13 @@
   "extends": "@projeto-react-08/tsconfig/node.json",
   "include": [
     "src/**/*"
-  ]
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
+  }
 }
