@@ -1,0 +1,10 @@
+services:
+  pg:
+    image: bitnami/postgresql:latest
+    ports:
+      - 5433:5433
+    environment:
+      POSTGRESQL_PORT_NUMBER: 5433
+      POSTGRESQL_USER: docker
+      POSTGRESQL_PASSWORD: docker
+      POSTGRESQL_DATABASE: next-saas
