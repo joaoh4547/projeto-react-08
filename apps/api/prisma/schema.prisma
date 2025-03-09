@@ -22,7 +22,7 @@ model User {
   createdAt          DateTime       @default(now()) @map("created_at")
   updatedAt          DateTime       @updatedAt @map("updated_at")
   tokens             Token[]
-  accounts           Accounts[]
+  accounts           Account[]
   invites            Invite[]
   member_on          Member[]
   owns_organizations Organization[]
@@ -50,7 +50,7 @@ enum AccountProvider {
   GITHUB
 }
 
-model Accounts {
+model Account {
   id                String          @id @default(cuid())
   provider          AccountProvider
   providerAccountId String          @unique @map("provider_account_id")
