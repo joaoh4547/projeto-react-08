@@ -2,6 +2,7 @@ import fastifyCors from '@fastify/cors'
 import fastifyJwt from '@fastify/jwt'
 import fastifySwagger from '@fastify/swagger'
 import fastifySwaggerUi from '@fastify/swagger-ui'
+import { env } from '@projeto-react-08/env'
 import { fastify } from 'fastify'
 import {
   jsonSchemaTransform,
@@ -32,22 +33,24 @@ app.register(fastifySwagger, {
       description: 'Full Stack saas app with multi-tenant & RBAC.',
       version: '1.0.0',
     },
-    servers: [],
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          bearerFormat: 'JWT',
+        },
+      },
+    },
   },
   transform: jsonSchemaTransform,
-
-  // You can also create transform with custom skiplist of endpoints that should not be included in the specification:
-  //
-  // transform: createJsonSchemaTransform({
-  //   skipList: [ '/documentation/static/*' ]
-  // })
 })
 
 app.register(fastifySwaggerUi, {
   routePrefix: '/docs',
 })
 
-app.register(fastifyJwt, { secret: 'my-jwt-secret' })
+app.register(fastifyJwt, { secret: env.JWT_SECRET })
 
 app.register(fastifyCors)
 
@@ -58,6 +61,6 @@ app.register(getProfile)
 app.register(requestPasswordRecover)
 app.register(resetPassword)
 
-app.listen({ port: 3333 }).then(() => {
-  console.log(`Server running`)
+app.listen({ port: env.SERVER_PORT }).then(() => {
+  console.log(`Server running on port  ${env.SERVER_PORT}`)
 })
