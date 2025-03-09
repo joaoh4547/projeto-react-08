@@ -1,7 +1,7 @@
 import { FastifyInstance } from 'fastify'
 import {
-    hasZodFastifySchemaValidationErrors,
-    ZodFastifySchemaValidationError,
+  hasZodFastifySchemaValidationErrors,
+  ZodFastifySchemaValidationError,
 } from 'fastify-type-provider-zod'
 import { ZodError } from 'zod'
 
