@@ -2,7 +2,7 @@ import { z } from 'zod'
 
 import { roleSchema } from '../roles'
 
-const userSchema = z.object({
+export const userSchema = z.object({
   id: z.string(),
   role: roleSchema,
 })
