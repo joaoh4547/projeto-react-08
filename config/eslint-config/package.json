@@ -5,7 +5,7 @@
   "private": true,
   "exports": {
     "./library": "./library.cjs",
-    "./next-js": "./next.cjs",
+    "./next": "./next.cjs",
     "./node": "./node.cjs"
   },
   "devDependencies": {
