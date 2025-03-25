@@ -5,6 +5,7 @@ import { Separator } from '@radix-ui/react-separator'
 import { AlertTriangle, Loader2 } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 
 import githubIcon from '@/assets/github-icon.svg'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -20,8 +21,13 @@ export function SignInForm() {
   //  { success: false, errors: null, message: null } ,
   // )
 
+  const { push } = useRouter()
+
   const [{ errors, message, success }, handleSignIn, isPending] = useFormState(
     signInWithEmailAndPassword,
+    () => {
+      push('/')
+    },
   )
 
   return (
