@@ -1,5 +1,5 @@
 services:
-  pg:
+  postgres:
     image: bitnami/postgresql:latest
     ports:
       - 5433:5433
