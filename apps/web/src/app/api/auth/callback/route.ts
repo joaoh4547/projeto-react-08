@@ -16,7 +16,6 @@ export async function GET(req: NextRequest) {
       { status: 400 },
     )
   }
-
   const { token } = await signInWithGitHub({ code })
 
   const cookiesStore = await cookies()
@@ -27,5 +26,6 @@ export async function GET(req: NextRequest) {
 
   const redirectUrl = req.nextUrl.clone()
   redirectUrl.pathname = '/'
+  redirectUrl.search = ''
   return NextResponse.redirect(redirectUrl)
 }
